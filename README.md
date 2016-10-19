@@ -8,12 +8,27 @@
 * The opportunity to join any public room
 
 ## User requirements
-This site is based on Ruby on Rails. 
-The site will interact with YouTube, i.e. users can add and watch any video from YouTube just by inserting needed link.
+# Sofrware interfaces
+* Frameworks
+  * Ruby on Rails
+  * Bootstrap
+* Programming languages
+  * Ruby
+  * JS
+* Database
+  * SQLite3
+
+# User interfaces
 Mokups of this site you can find in "Requirements" directory.
-Аny average user will be able to use this site.
+
+# User characteristicks
+There are some user groups on this website:
+* Administrators
+* Registered users
+* Guests
 
 ## System requirements
+# Functional requirements
 * Room page
   * Adding video to page
   * Video synchronization between users
@@ -23,7 +38,7 @@ Mokups of this site you can find in "Requirements" directory.
   * Header, footer
   * All public rooms
 * User page
-* Login page, Signup page, etc.
+* Login page, Sign up page, etc.
 * Admin page
 * User roles
 * Search
