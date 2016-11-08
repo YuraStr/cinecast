@@ -23,16 +23,7 @@ There are some user groups on this website:
 
 ## System requirements
 ### Functional requirements
-* Creating rooms for watching videos with other people
-  * Adding video to page
-  * Video synchronization between users
-  * General chat
-* Main page
-  * Header, footer
-  * All public rooms
-* User page
-* Login page, Sign up page, etc.
-* Admin page
-* User roles
-* Search
-* Tags
+* Authorization
+* Creating for watching videos with other people
+* Deleting rooms
+* Playing last user videos
