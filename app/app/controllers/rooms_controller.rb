@@ -10,11 +10,19 @@ class RoomsController < ApplicationController
   def create
     set_user
     @user.create_room(room_params)
-    redirect_to root_path
+    redirect_to user_room_path
   end
 
   def show
     set_user
+    @room = @user.room
+  end
+
+  def destroy
+    set_user
+    @room = @user.room
+    @room.destroy
+    redirect_to root_path
   end
 
   private

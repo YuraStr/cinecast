@@ -7,9 +7,10 @@ Rails.application.routes.draw do
 
   root "rooms#index"
 
-  resources :messages
   resources :users do
-    resource :room
+    resource :room do
+      resources :messages
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

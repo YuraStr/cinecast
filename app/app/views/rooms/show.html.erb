@@ -13,10 +13,10 @@
             </div>
             <div class="panel-body">
               <ul id="chat">
-                <%= render Message.all %>
+                <%= render @room.messages.all %>
               </ul>
               <div class="panel-footer">
-                  <%= form_for Message.new, remote: true do |f| %>
+                  <%= form_for [@user, @room, @room.messages.build], remote: true do |f| %>
                     <div class="input-group">
                       <%= f.text_field :body, class: "form-control" %>
                       <span class="input-group-btn">
@@ -29,8 +29,25 @@
           </div>
         </div>
       </div>
+
+      <div class="col-md-8">
+        <div class="component component-video embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item youtube-iframe" allowfullscreen="" id="video"></iframe>
+        </div>
+        <br/>
+        <% if @room.user == current_user %>
+          <%= button_to "Delete room", user_room_path, method: :delete,
+                                                       class: "btn btn-danger",
+                                                       id: "delete_btn" %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
 
 <%= subscribe_to "/messages/new" %>
+
+<script type="text/javascript">
+    var url = getYouTubeId("<%= @room.video_url %>");
+    document.getElementById("video").setAttribute("src", "https://www.youtube.com/embed/" + url);
+</script>
