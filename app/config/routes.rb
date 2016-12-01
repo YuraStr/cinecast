@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
+  get 'messages/index'
+
+  get 'messages/create'
+
   devise_for :users, :controllers => { :registrations => "registrations" }
 
   root "rooms#index"
 
+  resources :messages
   resources :users do
     resource :room
   end

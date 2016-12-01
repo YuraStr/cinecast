@@ -7,4 +7,5 @@ class User < ActiveRecord::Base
   validates :username, :email, :password, :password_confirmation, :presence => true
 
   has_one :room, :dependent => :destroy
+  has_many :messages, :dependent => :destroy
 end

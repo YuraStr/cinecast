@@ -12,23 +12,18 @@
               Chat
             </div>
             <div class="panel-body">
-              <div class="container">
-                <div class="row message-bubble">
-                  <p class="text-muted">Matt Townsen</p>
-                  <span>Why is yo shit so broke?</span>
-                </div>
-                <div class="row message-bubble">
-                  <p class="text-muted">Matt Townsen</p>
-                  <p>It Isn't'</p>
-                </div>
-                <div class="row message-bubble">
-                  <p class="text-muted">Matt Townsen</p>
-                  <p>Umm yes it is</p>
-                </div>
-                <div class="row message-bubble">
-                  <p class="text-muted">Matt Townsen</p>
-                  <p>Test message</p>
-                </div>
+              <ul id="chat">
+                <%= render Message.all %>
+              </ul>
+              <div class="panel-footer">
+                  <%= form_for Message.new, remote: true do |f| %>
+                    <div class="input-group">
+                      <%= f.text_field :body, class: "form-control" %>
+                      <span class="input-group-btn">
+                        <%= f.submit "Send", class: "btn btn-default" %>
+                      </span>
+                    </div>
+                  <% end %>
               </div>
             </div>
           </div>
@@ -37,3 +32,5 @@
     </div>
   </div>
 </div>
+
+<%= subscribe_to "/messages/new" %>
