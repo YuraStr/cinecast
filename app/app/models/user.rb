@@ -6,5 +6,5 @@ class User < ActiveRecord::Base
 
   validates :username, :email, :password, :password_confirmation, :presence => true
 
-  belongs_to :room
+  has_one :room, :dependent => :destroy
 end

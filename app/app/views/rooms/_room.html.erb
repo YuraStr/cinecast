@@ -1,5 +1,5 @@
 <tr>
-  <td><%= room.name %></td>
-  <td><%= 0 %></td>
+  <td><%= link_to room.name + " (" + room.user.username + ")",
+                  user_room_path(room.user.id) %></td>
   <td><%= room.video_url %></td>
 </tr>
