@@ -32,7 +32,7 @@
 
       <div class="col-md-8">
         <div class="component component-video embed-responsive embed-responsive-16by9">
-          <iframe class="embed-responsive-item youtube-iframe" allowfullscreen="" id="video"></iframe>
+          <%= VideoInfo.new(@room.video_url).embed_code.html_safe %>
         </div>
         <br/>
         <% if @room.user == current_user %>
@@ -46,8 +46,3 @@
 </div>
 
 <%= subscribe_to "/messages/new" %>
-
-<script type="text/javascript">
-    var url = getYouTubeId("<%= @room.video_url %>");
-    document.getElementById("video").setAttribute("src", "https://www.youtube.com/embed/" + url);
-</script>

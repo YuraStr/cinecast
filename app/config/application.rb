@@ -6,6 +6,10 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+# Yt.configure do |config|
+#   config.api_key = 'AIzaSyC2AWo7oHFEO3DLiANvaF3F_3MBLZvoSKo'
+# end
+
 module App
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
